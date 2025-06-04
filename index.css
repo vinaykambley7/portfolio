@@ -202,14 +202,7 @@ nav {
     background-position: center;
 }
 
-.project-image1 {
 
-    background-color: #ddd;
-    background-size: cover;
-    background-position: center;
-    height: 400px;
-
-}
 
 
 .project-content {
@@ -385,4 +378,12 @@ footer {
     .skills-container {
         grid-template-columns: 1fr;
     }
+}
+.project-image1 {
+
+    background-color: #ddd;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+
 }
