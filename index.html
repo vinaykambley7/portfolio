@@ -3,204 +3,142 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-    <title>Vinay Kambley | Aadhaar Trainer &amp; Portal Developer | AI/ML Engineer</title>
-    <meta name="description" content="Portfolio of Vinay Kambley - Aadhaar Trainer & Portal Developer at ESD MeeSeva (Govt of Telangana), Full-Stack Developer, and AIML Specialist.">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Existing Stylesheet -->
     <link rel="stylesheet" href="index.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinay Kambley | AI/ML Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+
+    </style>
 </head>
 
 <body>
-    <!-- Futuristic Interactive Background Particles -->
+    <!-- Background Animation Canvas -->
     <canvas id="bg-canvas"></canvas>
 
-    <!-- Header Navigation -->
+    <!-- Header -->
     <header>
         <div class="container">
             <nav>
-                <a href="#hero" class="logo">VK</a>
-                <div class="nav-links" id="navLinks">
-                    <a href="#hero">Home</a>
-                    <a href="#experience">Experience <span class="nav-badge-dot"></span></a>
+                <a href="#" class="logo">VK</a>
+                <div class="nav-links">
                     <a href="#projects">Projects</a>
-                    <a href="#skills">Skills</a>
+                    <a href="#experience">Experience</a>
                     <a href="#education">Education</a>
-                    <a href="#certifications">Certifications</a>
+                    <a href="#skills">Skills</a>
                     <a href="#contact">Contact</a>
                 </div>
-                <div class="nav-actions">
-                    <button class="theme-toggle" id="themeToggle" title="Toggle Theme" aria-label="Toggle theme">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section id="hero">
-        <div class="container hero-container">
+        <div class="container">
             <div class="hero-image-wrapper">
-                <div class="hero-image-frame" id="heroImageFrame">
-                    <img src="./vinay-transparent.png" 
-                         alt="Vinay Kambley - Aadhaar Trainer & Portal Developer" 
-                         class="hero-photo"
-                         id="heroPhoto"
-                         onerror="this.src='https://res.cloudinary.com/dmy7kknrc/image/upload/v1788937514/WhatsApp_Image_2026-09-09_at_12.34.03_PM_gdo6qr.jpg'">
-                </div>
-                <div class="image-hover-hint">
-                    <i class="fas fa-mouse-pointer"></i> Hover over photo to zoom
-                </div>
+                <img src="./vinay-transparent.png" 
+                     alt="Vinay Kambley" 
+                     class="hero-profile-pic"
+                     id="heroProfilePic"
+                     onerror="this.src='https://res.cloudinary.com/dmy7kknrc/image/upload/v1788937514/WhatsApp_Image_2026-09-09_at_12.34.03_PM_gdo6qr.jpg'">
             </div>
-
             <div class="hero-content">
-                <div class="role-badge animate">
-                    <span class="live-dot"></span> ESD MeeSeva &bull; Govt of Telangana
-                </div>
-                <h1 class="animate delay-1">Vinay Kambley</h1>
-                <p class="hero-subtitle animate delay-2">
-                    Aadhaar Trainer &amp; Portal Developer | AI/ML Engineer | Full-Stack Developer
-                </p>
+                <h1 class="animate">Vinay Kambley</h1>
+                <p class="hero-subtitle animate delay-1">Aadhaar Trainer &amp; Portal Developer | AI/ML Engineer | Frontend Developer </p>
                 <p class="hero-description animate delay-2">
-                    Serving as <strong>Aadhaar Trainer &amp; Portal Developer</strong> at 
-                    <strong>The Commissioner, Electronic Service Delivery (ESD) / MeeSeva</strong>, IT, E&amp;C Department, Government of Telangana. 
-                    Specialized in architecting multi-center operations web portals, automated end-of-day data pipelines, full-stack systems, and intelligent machine learning software.
+                    Passionate about building intelligent solutions, government enterprise web portals, and user-friendly interfaces.
+                    Currently serving as Aadhaar Trainer &amp; Portal Developer at ESD MeeSeva (Govt of Telangana).
                 </p>
                 <div class="cta-buttons animate delay-3">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#experience" class="btn btn-accent">Work Experience</a>
+                    <a href="#experience" class="btn btn-secondary">Experience</a>
                     <a href="#contact" class="btn btn-secondary">Contact Me</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Work Experience Section (Dedicated Feature) -->
+    <!-- Work Experience Section -->
     <section id="experience">
         <div class="container">
             <h2>Work Experience</h2>
-            <p class="section-intro">Professional engineering impact, government portal architecture, and statewide technical operations</p>
 
-            <div class="experience-list">
-                <!-- 1. The Commissioner, Electronic Service Delivery (ESD) / MeeSeva -->
-                <div class="experience-card active-role animate">
-                    <div class="experience-header">
-                        <div class="role-info">
-                            <div class="exp-badge">
-                                <span class="live-pulse"></span> Active Role (Present)
-                            </div>
-                            <h3 class="exp-role">Aadhaar Trainer &amp; Portal Developer</h3>
-                            <h4 class="exp-company">
-                                <i class="fas fa-landmark"></i> The Commissioner, Electronic Service Delivery (ESD) / MeeSeva
-                            </h4>
-                            <p class="exp-department">
-                                <i class="fas fa-shield-alt"></i> IT, E&amp;C Department, Government of Telangana
-                            </p>
-                        </div>
-                        <div class="exp-meta">
-                            <span class="exp-date"><i class="far fa-calendar-alt"></i> Present</span>
-                            <span class="exp-location"><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana</span>
-                        </div>
-                    </div>
+            <div class="education-item animate">
+                <div class="education-header">
+                    <h3 class="education-degree">Aadhaar Trainer &amp; Portal Developer</h3>
+                    <span>Present</span>
+                </div>
+                <p><strong>The Commissioner, Electronic Service Delivery (ESD) / MeeSeva</strong></p>
+                <p>IT, E&amp;C Department, Government of Telangana</p>
+                <ul class="skill-list" style="margin-top: 1rem;">
+                    <li>Architected, deployed, and maintain the ASK Managers Portal across 5 ASK centers, and automated daily end-of-day (EOD) reporting workflows to eliminate manual calculation errors.</li>
+                    <li>Conduct comprehensive technical training for Aadhaar operators across Telangana on official UIDAI Standard Operating Procedures (SOPs), process guidelines, and visual instructional modules.</li>
+                    <li>Audit and evaluate new UIDAI Aadhaar client version releases, analyzing system modifications, troubleshooting client-side runtime errors, and ensuring zero operational downtime.</li>
+                    <li>Manage end-to-end grievance redressal across the ESD agency, resolving technical issues, enrollment sync errors, and operational escalations in close coordination with ASK managers and operators.</li>
+                </ul>
+                <div class="project-tech" style="margin-top: 1rem;">
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Supabase</span>
+                    <span class="tech-tag">Firebase</span>
+                    <span class="tech-tag">SheetJS</span>
+                    <span class="tech-tag">Chart.js</span>
+                    <p style="margin-top: 0.5rem;"> Visit : <a href="https://ask-managers-portal.web.app/" target="_blank" rel="noopener noreferrer">https://ask-managers-portal.web.app/</a></p>
+                </div>
+            </div>
 
-                    <div class="experience-content">
-                        <p class="exp-overview">
-                            Serving under the Information Technology, Electronics &amp; Communications (ITE&amp;C) Department, Government of Telangana. 
-                            Leading digital transformation, operations automation, technical training, and system auditing across Aadhaar Seva Kendra (ASK) centers:
-                        </p>
+            <div class="education-item animate delay-1">
+                <div class="education-header">
+                    <h3 class="education-degree">Industrial Systems Engineering Trainee</h3>
+                    <span>2021 - 2022</span>
+                </div>
+                <p><strong>HBL Power Systems Ltd.</strong></p>
+                <p>Industrial Electronics &amp; Systems Division &bull; 6 Months Industrial Training</p>
+                <ul class="skill-list" style="margin-top: 0.5rem;">
+                    <li>Hands-on experience with industrial electronics, circuitry diagnostics, and quality testing under plant constraints.</li>
+                    <li>Collaborated closely with plant engineers and technical operations staff to streamline verification cycles.</li>
+                    <li>Developed disciplined troubleshooting acuity, precision engineering practices, and systematic failure diagnostics.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-                        <ul class="exp-bullet-list">
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <span><strong>Architected, deployed, and maintain the ASK Managers Portal across 5 ASK centers</strong>, and automated daily end-of-day (EOD) reporting workflows to eliminate manual calculation errors.</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <span><strong>Conduct comprehensive technical training for Aadhaar operators across Telangana</strong> on official UIDAI Standard Operating Procedures (SOPs), process guidelines, and visual instructional modules.</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <span><strong>Audit and evaluate new UIDAI Aadhaar client version releases</strong>, analyzing system modifications, troubleshooting client-side runtime errors, and ensuring zero operational downtime.</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <span><strong>Manage end-to-end grievance redressal across the ESD agency</strong>, resolving technical issues, enrollment sync errors, and operational escalations in close coordination with ASK managers and operators.</span>
-                            </li>
-                        </ul>
-
-                        <div class="project-tech">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Supabase (PostgreSQL)</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">SheetJS</span>
-                            <span class="tech-tag">Chart.js</span>
-                            <span class="tech-tag">UIDAI Systems</span>
-                            <span class="tech-tag">Workflow Automation</span>
-                            <span class="tech-tag">Technical Training</span>
-                        </div>
-
-                        <div class="exp-link-row">
-                            <p>Portal: <a href="https://ask-managers-portal.web.app/" target="_blank" rel="noopener noreferrer">https://ask-managers-portal.web.app/</a></p>
-                            <a href="https://ask-managers-portal.web.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Explore ASK Portal &rarr;</a>
-                        </div>
-                    </div>
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category animate">
+                    <h3>Programming</h3>
+                    <ul class="skill-list">
+                        <li>Python</li>
+                        <li>HTML/CSS</li>
+                        <li>JavaScript</li>
+                        <li>Bootstrap</li>
+                        <li>TypeScript</li>
+                    </ul>
                 </div>
 
-                <!-- 2. HBL Power Systems Ltd. -->
-                <div class="experience-card animate delay-1">
-                    <div class="experience-header">
-                        <div class="role-info">
-                            <div class="exp-badge past-badge">Industrial Training</div>
-                            <h3 class="exp-role">Industrial Systems Engineering Trainee</h3>
-                            <h4 class="exp-company">
-                                <i class="fas fa-industry"></i> HBL Power Systems Ltd.
-                            </h4>
-                            <p class="exp-department">
-                                <i class="fas fa-microchip"></i> Industrial Electronics &amp; Systems Division
-                            </p>
-                        </div>
-                        <div class="exp-meta">
-                            <span class="exp-date"><i class="far fa-calendar-alt"></i> 2021 – 2022 (6 Months)</span>
-                            <span class="exp-location"><i class="fas fa-map-marker-alt"></i> Hyderabad, India</span>
-                        </div>
-                    </div>
+                <div class="skill-category animate delay-1">
+                    <h3>Data &amp; AI</h3>
+                    <ul class="skill-list">
+                        <li>Data Analytics</li>
+                        <li>SQL</li>
+                        <li>Supabase (PostgreSQL)</li>
+                        <li>Firebase / Firestore</li>
+                    </ul>
+                </div>
 
-                    <div class="experience-content">
-                        <ul class="exp-bullet-list">
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <span>Hands-on experience with industrial electronics, circuitry diagnostics, and quality testing under plant constraints.</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <span>Collaborated closely with plant engineers and technical operations staff to streamline verification cycles.</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <span>Developed disciplined troubleshooting acuity, precision engineering practices, and systematic hardware failure diagnostics.</span>
-                            </li>
-                        </ul>
-
-                        <div class="project-tech">
-                            <span class="tech-tag">Industrial Electronics</span>
-                            <span class="tech-tag">System Diagnostics</span>
-                            <span class="tech-tag">Quality Verification</span>
-                            <span class="tech-tag">Power Systems</span>
-                        </div>
-                    </div>
+                <div class="skill-category animate delay-2">
+                    <h3>Design &amp; Tools</h3>
+                    <ul class="skill-list">
+                        <li>Figma</li>
+                        <li>Canva</li>
+                        <li>Power BI</li>
+                        <li>Git &bull; GitHub</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -212,11 +150,8 @@
             <h2>Featured Projects</h2>
             <div class="projects-grid">
 
-                <!-- 1. ESD ASK Desk -->
+                <!-- ESD ASK Desk -->
                 <div class="project-card animate">
-                    <div class="project-header-box">
-                        <div class="project-badge-tag"><i class="fas fa-star"></i> Operations &amp; Analytics</div>
-                    </div>
                     <div class="project-content">
                         <h3>ESD ASK Desk – Operations &amp; EOD Management Portal</h3>
                         <p>Developed a multi-center operations web portal for 5 Aadhaar Seva Kendra (ASK) centers with real-time Supabase cloud synchronization. Automated client-side parsing of official daily EOD reports (Excel/PDF) using SheetJS and regex extraction, eliminating manual calculation errors. Built an interactive executive dashboard with day-by-day compliance tracking, operator deployment rosters, and hardware grievance ticketing.</p>
@@ -226,176 +161,86 @@
                             <span class="tech-tag">Firebase</span>
                             <span class="tech-tag">SheetJS</span>
                             <span class="tech-tag">Chart.js</span>
+                            <p> Visit : <a href="https://ask-managers-portal.web.app/" target="_blank" rel="noopener noreferrer">https://ask-managers-portal.web.app/</a></p>
                         </div>
-                        <p>Visit : <a href="https://ask-managers-portal.web.app/" target="_blank" rel="noopener noreferrer">https://ask-managers-portal.web.app/</a></p>
                     </div>
                 </div>
 
-                <!-- 2. Ticket World -->
+                <!-- Ticket World -->
                 <div class="project-card animate delay-1">
                     <div class="project-image" style="background-image: url('https://res.cloudinary.com/ddiffs1l5/image/upload/v1744709935/ChatGPT_Image_Apr_15_2025_03_08_10_PM_szozeh.png');"></div>
                     <div class="project-content">
                         <h3>Ticket World</h3>
-                        <p>Ticket World is an interactive web application for booking tickets to movies, concerts, shows, and travel events. Features categorized catalogues, interactive seat map selector, dynamic pricing calculation, and a responsive interface.</p>
+                        <p>Ticket World is a web application for booking tickets to movies, concerts, shows, and travel. It is built using HTML, CSS, and JavaScript with a responsive and interactive user interface.</p>
                         <div class="project-tech">
                             <span class="tech-tag">HTML</span>
                             <span class="tech-tag">CSS</span>
                             <span class="tech-tag">JavaScript</span>
+                            <p> Visit : <a href="https://vinaykambley7.github.io/ticketWorld/" target="_blank" rel="noopener noreferrer">https://vinaykambley7.github.io/ticketWorld/</a></p>
                         </div>
-                        <p>Visit : <a href="https://vinaykambley7.github.io/ticketWorld/" target="_blank" rel="noopener noreferrer">https://vinaykambley7.github.io/ticketWorld/</a></p>
                     </div>
                 </div>
-
-                <!-- 3. CareConnect – Hospital Management -->
-                <div class="project-card animate delay-2">
+                
+                <!-- CareConnect -->
+                <div class="project-card animate delay-1">
                     <div class="project-image" style="background-image: url('https://res.cloudinary.com/dmy7kknrc/image/upload/v1755050942/Care_Connect_n28xvw.png');"></div>
                     <div class="project-content">
                         <h3>CareConnect – Hospital Management</h3>
-                        <p>Role-based healthcare workflow management application featuring 3 dedicated modules: Receptionist patient intake registration and doctor assignment, Doctor clinical records &amp; digital prescriptions, and Pharmacist medicine dispensing confirmation.</p>
+                        <p>A responsive React-based hospital management system designed to streamline patient registration, doctor scheduling, and appointment tracking. Deployed on GitHub Pages for public access.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">React</span>
                             <span class="tech-tag">CSS</span>
                             <span class="tech-tag">JavaScript</span>
+                            <p> Visit : <a href="https://vinaykambley7.github.io/Careconnect/" target="_blank" rel="noopener noreferrer">https://vinaykambley7.github.io/Careconnect/</a></p>
                         </div>
-                        <p>Visit : <a href="https://vinaykambley7.github.io/Careconnect/" target="_blank" rel="noopener noreferrer">https://vinaykambley7.github.io/Careconnect/</a></p>
                     </div>
                 </div>
-
-                <!-- 4. SkillConnect -->
+            
+                <!-- S-Truck Delivery -->
                 <div class="project-card animate">
-                    <div class="project-header-box">
-                        <div class="project-badge-tag"><i class="fas fa-bolt"></i> Full-Stack Marketplace</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>SkillConnect</h3>
-                        <p>Full-stack marketplace connecting homeowners with verified local service professionals (electricians, plumbers, carpenters, painters). Features a 13-step provider onboarding wizard, 10+ photo showcase gallery, 9-stage booking lifecycle, direct in-app messaging, verified reviews, and admin verification desk.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React 19</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Tailwind CSS</span>
-                            <span class="tech-tag">Supabase</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                        </div>
-                        <p>Visit : <a href="https://skillconnect-app.netlify.app/" target="_blank" rel="noopener noreferrer">https://skillconnect-app.netlify.app/</a></p>
-                    </div>
-                </div>
-
-                <!-- 5. Engineering Daily Work Portal -->
-                <div class="project-card animate delay-1">
-                    <div class="project-header-box">
-                        <div class="project-badge-tag"><i class="fas fa-building"></i> Enterprise Reporting</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Engineering Daily Work &amp; Verification Portal</h3>
-                        <p>Real-time enterprise reporting platform with a 3-tier hierarchical approval workflow (Engineer &rarr; Team Lead &rarr; Plant Head), real-time Firestore onSnapshot synchronization, touch-optimized field logging, side-by-side audit comparisons, and automated 1-click Excel/PDF export engines.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Tailwind CSS</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Firestore</span>
-                        </div>
-                        <p>Visit : <a href="https://engineering-work-portal.web.app" target="_blank" rel="noopener noreferrer">https://engineering-work-portal.web.app</a></p>
-                    </div>
-                </div>
-
-                <!-- 6. EdPlus-Nihongo-Path -->
-                <div class="project-card animate delay-2">
-                    <div class="project-header-box">
-                        <div class="project-badge-tag"><i class="fas fa-language"></i> EdTech &amp; Learning</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>EdPlus-Nihongo-Path</h3>
-                        <p>Dedicated interactive Japanese language learning platform structured for Hiragana, Katakana, and Kanji acquisition. Includes retention quizzes, audio pronunciation guides, visual milestone badges, and fast server-rendered lesson views.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Next.js</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Tailwind CSS</span>
-                        </div>
-                        <p>Visit : <a href="https://edplus-nihongo-path.vercel.app/" target="_blank" rel="noopener noreferrer">https://edplus-nihongo-path.vercel.app/</a></p>
-                    </div>
-                </div>
-
-                <!-- 7. Grievance Support Hub -->
-                <div class="project-card animate">
-                    <div class="project-header-box">
-                        <div class="project-badge-tag"><i class="fas fa-headset"></i> Support &amp; Ticketing</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Grievance Support Hub</h3>
-                        <p>Aadhaar training support and grievance tracking web portal. Generates unique tracked Grievance IDs upon submission, displays dynamic ticket lifecycle progress timelines, and categorizes operational issues for fast resolution.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Tailwind CSS</span>
-                        </div>
-                        <p>Visit : <a href="https://gravience-support-hub.vercel.app/" target="_blank" rel="noopener noreferrer">https://gravience-support-hub.vercel.app/</a></p>
-                    </div>
-                </div>
-
-                <!-- 8. S-Truck Delivery -->
-                <div class="project-card animate delay-1">
+                    <div class="project-image" style="background-image: url('https://res.cloudinary.com/dmy7kknrc/image/upload/v1710075894/IMG_1780_qnls7g.jpg');"></div>
                     <div class="project-content">
                         <h3>S-Truck Delivery</h3>
-                        <p>Web application for booking freight and cargo transport. Select vehicle categories based on tonnage, configure multi-point route waypoints, and schedule dispatch dates with instant route summaries.</p>
+                        <p>Frontend web application for logistics management developed with HTML, CSS, and JavaScript.</p>
                         <div class="project-tech">
                             <span class="tech-tag">HTML</span>
                             <span class="tech-tag">CSS</span>
                             <span class="tech-tag">JavaScript</span>
+                            <p> Visit : <a href="https://vinaykambley7.github.io/S-Truck/" target="_blank" rel="noopener noreferrer">https://vinaykambley7.github.io/S-Truck/</a></p>
                         </div>
-                        <p>Visit : <a href="https://vinaykambley7.github.io/S-Truck/" target="_blank" rel="noopener noreferrer">https://vinaykambley7.github.io/S-Truck/</a></p>
                     </div>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2>Technical Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category animate">
-                    <h3>Frontend &amp; Web</h3>
-                    <ul class="skill-list">
-                        <li>React &bull; TypeScript</li>
-                        <li>JavaScript (ES6+)</li>
-                        <li>HTML5 &bull; CSS3</li>
-                        <li>Tailwind CSS &bull; Bootstrap</li>
-                    </ul>
+                <!-- Skill Connect (UI) -->
+                <div class="project-card animate delay-1">
+                    <div class="project-image" style="background-image: url('https://res.cloudinary.com/ddiffs1l5/image/upload/v1745658955/Untitled_design_3_kiul0b.png');"></div>
+                    <div class="project-content">
+                        <h3>Skill Connect (UI)</h3>
+                        <p>User interface design for a skill-sharing platform focusing on intuitive user experience.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">UI/UX</span>
+                            <span class="tech-tag">Canva</span>
+                            <p> Visit : <a href="https://drive.google.com/drive/folders/1z37KQaFRqNoF88qltApBFok1o9QioDme?usp=sharing" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1z37KQaFRqNoF88qltApBFok1o9QioDme?usp=sharing</a></p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-category animate delay-1">
-                    <h3>Backend &amp; Cloud</h3>
-                    <ul class="skill-list">
-                        <li>Supabase &bull; PostgreSQL</li>
-                        <li>Google Firebase &bull; Firestore</li>
-                        <li>Node.js &bull; Express.js</li>
-                        <li>SheetJS Data Automation</li>
-                    </ul>
+                <!-- Wiki Search -->
+                <div class="project-card animate">
+                    <div class="project-image1" style="background-image: url('https://res.cloudinary.com/ddiffs1l5/image/upload/v1749040605/Wikipedia-Logo-PNG-HD-Quality_f7nv56.png');"></div>
+                    <div class="project-content">
+                        <h3>Wiki Search</h3>
+                        <p>Developed a Wikipedia-style search interface using HTML, CSS, and JavaScript, featuring responsive design principles and CSS animations for enhanced user experience with direct Wikipedia links.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <p> Visit : <a href="https://vinaykambley7.github.io/WikiSearch/" target="_blank" rel="noopener noreferrer">https://vinaykambley7.github.io/WikiSearch/</a></p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-category animate delay-2">
-                    <h3>Data &amp; AI</h3>
-                    <ul class="skill-list">
-                        <li>Python (AI/ML)</li>
-                        <li>Data Analytics</li>
-                        <li>SQL</li>
-                        <li>C / C++ Basics</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category animate delay-3">
-                    <h3>Design &amp; Tools</h3>
-                    <ul class="skill-list">
-                        <li>Git &bull; GitHub</li>
-                        <li>Figma &bull; UI/UX Design</li>
-                        <li>Canva</li>
-                        <li>Postman</li>
-                    </ul>
-                </div>
             </div>
         </div>
     </section>
@@ -406,29 +251,21 @@
             <h2>Education</h2>
             <div class="education-item animate">
                 <div class="education-header">
-                    <h3 class="education-degree">B.Tech in Artificial Intelligence &amp; Machine Learning</h3>
-                    <span class="education-date">2022 - 2025</span>
+                    <h3 class="education-degree">B.Tech in AI &amp; ML</h3>
+                    <span>2022 - 2025</span>
                 </div>
-                <p>Vignana Bharathi Institute of Technology (VBIT) &bull; Hyderabad, Telangana</p>
+                <p>Vignana Bharathi Institute of Technology (VBIT)</p>
             </div>
 
             <div class="education-item animate delay-1">
                 <div class="education-header">
                     <h3 class="education-degree">Diploma in Industrial Electronics</h3>
-                    <span class="education-date">2018 - 2022</span>
+                    <span>2018 - 2022</span>
                 </div>
-                <p>Government Institute Of Electronics (GIOE) &bull; Hyderabad, Telangana</p>
+                <p>Government Institute Of Electronics (GIOE)</p>
                 <ul class="skill-list">
-                    <li>Completed 6 months industrial training at HBL Power Systems Ltd.</li>
+                    <li>6 months industrial training at HBL Power Systems Ltd.</li>
                 </ul>
-            </div>
-
-            <div class="education-item animate delay-2">
-                <div class="education-header">
-                    <h3 class="education-degree">Secondary School Certificate (SSC)</h3>
-                    <span class="education-date">Completed</span>
-                </div>
-                <p>Geetha High School &bull; Hyderabad, Telangana</p>
             </div>
         </div>
     </section>
@@ -439,10 +276,10 @@
             <h2>Certifications</h2>
             <div class="education-item animate">
                 <ul class="skill-list">
-                    <li>Build Your Own Static Website &bull; Professional Web Academy</li>
-                    <li>Programming Foundations with Python &bull; Python Software Program</li>
-                    <li>Build Your Own Responsive Website &bull; Modern Frontend Certification</li>
-                    <li>Data Analytics Mega Workshop &bull; Data Science &amp; AIML Initiative</li>
+                    <li>Build Your Own Static Website</li>
+                    <li>Programming Foundations with Python</li>
+                    <li>Build Your Own Responsive Website</li>
+                    <li>Data Analytics Mega Workshop</li>
                 </ul>
             </div>
         </div>
@@ -452,24 +289,13 @@
     <section id="contact">
         <div class="container">
             <h2>Contact Me</h2>
-            <p class="contact-lead">Interested in collaborating or discussing engineering opportunities? Reach out directly!</p>
-            
-            <div class="contact-details">
-                <p>📞 Phone: <a href="tel:+918074236286">+91 8074236286</a></p>
-                <p>📧 Email: <a href="mailto:vinaykambley@gmail.com">vinaykambley@gmail.com</a></p>
-                <p>📍 Location: Hyderabad, Telangana (Open to Relocation)</p>
-            </div>
-
-            <div class="contact-links">
-                <a href="https://www.linkedin.com/in/kambley-vinay-3a1224253/" target="_blank" rel="noopener noreferrer" class="contact-link" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/vinaykambley7" target="_blank" rel="noopener noreferrer" class="contact-link" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:vinaykambley@gmail.com" class="contact-link" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
+            <p>📞 Phone: +91 8074236286</p>
+            <p>📧 Email: <a href="mailto:vinaykambley@gmail.com">vinaykambley@gmail.com</a></p>
+            <p>📍 Location: Hyderabad, Telangana (Open to Relocation)</p>
+            <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1.5rem; font-size: 1.5rem;">
+                <a href="https://www.linkedin.com/in/kambley-vinay-3a1224253/" target="_blank" rel="noopener noreferrer" style="color: var(--accent);"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/vinaykambley7" target="_blank" rel="noopener noreferrer" style="color: var(--accent);"><i class="fab fa-github"></i></a>
+                <a href="mailto:vinaykambley@gmail.com" style="color: var(--accent);"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </section>
@@ -477,11 +303,10 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 Vinay Kambley &bull; Aadhaar Trainer &amp; Portal Developer &bull; Hyderabad, Telangana</p>
+            <p>&copy; 2025 Vinay Kambley. Hyderabad, Telangana (Open to relocation)</p>
         </div>
     </footer>
 
-    <!-- Core Script -->
     <script src="index.js"></script>
 </body>
 
