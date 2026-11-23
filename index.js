@@ -1,12 +1,131 @@
 /**
- * Vinay Kambley - Portfolio Interactive Engine
- * Standalone Vanilla JavaScript (Clean, Fast, Zero External Dependencies)
+ * Vinay Kambley - Next-Gen Cyber Interactive Engine
+ * 3D Grid Canvas, Web Audio API SFX, Custom Cursor, Dynamic Card Tilt & Blueprint Modals
  */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ==========================================================================
-     01. Interactive Futuristic Particle Background Canvas
+     01. Web Audio API Cyber Synthetics Engine (Optional & Muteable)
+     ========================================================================== */
+  let audioCtx = null;
+  let sfxEnabled = true;
+
+  function initAudio() {
+    if (!audioCtx) {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (AudioContext) {
+        audioCtx = new AudioContext();
+      }
+    }
+    if (audioCtx && audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+  }
+
+  function playCyberTone(type = 'hover') {
+    if (!sfxEnabled) return;
+    try {
+      initAudio();
+      if (!audioCtx) return;
+
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      const now = audioCtx.currentTime;
+
+      if (type === 'hover') {
+        // Subtle cyber blip (high-tech frequency chirp, very quiet)
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(1400, now);
+        osc.frequency.exponentialRampToValueAtTime(1900, now + 0.05);
+
+        gain.gain.setValueAtTime(0.015, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.05);
+
+        osc.start(now);
+        osc.stop(now + 0.05);
+      } else if (type === 'click') {
+        // Laser confirmation pulse
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(800, now);
+        osc.frequency.exponentialRampToValueAtTime(400, now + 0.12);
+
+        gain.gain.setValueAtTime(0.04, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.12);
+
+        osc.start(now);
+        osc.stop(now + 0.12);
+      }
+    } catch (e) {
+      // Audio context policy safe ignore
+    }
+  }
+
+  // SFX Toggle Button
+  const sfxToggleBtn = document.getElementById('sfx-toggle');
+  if (sfxToggleBtn) {
+    sfxToggleBtn.addEventListener('click', () => {
+      sfxEnabled = !sfxEnabled;
+      sfxToggleBtn.classList.toggle('muted', !sfxEnabled);
+      if (sfxEnabled) playCyberTone('click');
+    });
+  }
+
+  // Bind sound events to interactive elements
+  document.querySelectorAll('[data-sound="hover"]').forEach(el => {
+    el.addEventListener('mouseenter', () => playCyberTone('hover'));
+  });
+
+  document.querySelectorAll('[data-sound="click"]').forEach(el => {
+    el.addEventListener('click', () => playCyberTone('click'));
+  });
+
+
+  /* ==========================================================================
+     02. Custom Cyber Cursor (Desktop)
+     ========================================================================== */
+  const cursorDot = document.getElementById('cursor-dot');
+  const cursorRing = document.getElementById('cursor-ring');
+
+  if (cursorDot && cursorRing) {
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let ringX = mouseX;
+    let ringY = mouseY;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursorDot.style.left = `${mouseX}px`;
+      cursorDot.style.top = `${mouseY}px`;
+    });
+
+    // Smooth spring follow loop for ring
+    function renderCursor() {
+      ringX += (mouseX - ringX) * 0.18;
+      ringY += (mouseY - ringY) * 0.18;
+
+      cursorRing.style.left = `${ringX}px`;
+      cursorRing.style.top = `${ringY}px`;
+
+      requestAnimationFrame(renderCursor);
+    }
+    renderCursor();
+
+    // Hover state expansion
+    const interactiveTargets = document.querySelectorAll('a, button, input, textarea, .avatar-holo-pod, .cyber-project-card, .matrix-card');
+    interactiveTargets.forEach(el => {
+      el.addEventListener('mouseenter', () => cursorRing.classList.add('active'));
+      el.addEventListener('mouseleave', () => cursorRing.classList.remove('active'));
+    });
+  }
+
+
+  /* ==========================================================================
+     03. Dual Interactive Background: 3D Grid + Constellation Particles
      ========================================================================== */
   const canvas = document.getElementById('bg-canvas');
   if (canvas) {
@@ -15,8 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let height = canvas.height = window.innerHeight;
 
     let particles = [];
-    const particleCount = Math.min(Math.floor((width * height) / 14000), 75);
-    const mouse = { x: null, y: null, radius: 150 };
+    const particleCount = Math.min(Math.floor((width * height) / 13000), 70);
+    const mouse = { x: null, y: null, radius: 170 };
 
     window.addEventListener('resize', () => {
       width = canvas.width = window.innerWidth;
@@ -34,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
       mouse.y = null;
     });
 
-    class Particle {
+    class CyberParticle {
       constructor() {
         this.reset();
       }
@@ -42,10 +161,11 @@ document.addEventListener('DOMContentLoaded', () => {
       reset() {
         this.x = Math.random() * width;
         this.y = Math.random() * height;
-        this.vx = (Math.random() - 0.5) * 0.7;
-        this.vy = (Math.random() - 0.5) * 0.7;
+        this.vx = (Math.random() - 0.5) * 0.75;
+        this.vy = (Math.random() - 0.5) * 0.75;
         this.radius = Math.random() * 2 + 1;
         this.baseRadius = this.radius;
+        this.isPurple = Math.random() > 0.65;
       }
 
       update() {
@@ -63,9 +183,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
           if (dist < mouse.radius) {
             const force = (mouse.radius - dist) / mouse.radius;
-            this.x -= (dx / dist) * force * 3;
-            this.y -= (dy / dist) * force * 3;
-            this.radius = this.baseRadius * 1.8;
+            this.x -= (dx / dist) * force * 3.5;
+            this.y -= (dy / dist) * force * 3.5;
+            this.radius = this.baseRadius * 2;
           } else {
             this.radius = this.baseRadius;
           }
@@ -75,9 +195,14 @@ document.addEventListener('DOMContentLoaded', () => {
       draw(isDark) {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = isDark ? 'rgba(6, 182, 212, 0.7)' : 'rgba(2, 132, 199, 0.6)';
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = isDark ? 'rgba(6, 182, 212, 0.5)' : 'rgba(2, 132, 199, 0.3)';
+        if (this.isPurple) {
+          ctx.fillStyle = isDark ? 'rgba(168, 85, 247, 0.8)' : 'rgba(147, 51, 234, 0.65)';
+          ctx.shadowColor = 'rgba(168, 85, 247, 0.6)';
+        } else {
+          ctx.fillStyle = isDark ? 'rgba(0, 240, 255, 0.85)' : 'rgba(2, 132, 199, 0.7)';
+          ctx.shadowColor = 'rgba(0, 240, 255, 0.6)';
+        }
+        ctx.shadowBlur = 10;
         ctx.fill();
         ctx.shadowBlur = 0;
       }
@@ -86,38 +211,72 @@ document.addEventListener('DOMContentLoaded', () => {
     function initParticles() {
       particles = [];
       for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle());
+        particles.push(new CyberParticle());
       }
     }
 
     initParticles();
 
-    function animate() {
+    // 3D Grid parameters
+    let gridOffset = 0;
+
+    function renderCanvas() {
       const isDark = document.body.classList.contains('dark-theme');
       ctx.clearRect(0, 0, width, height);
 
-      // Draw constellation connections
+      // Render perspective moving grid at the bottom third of screen
+      const horizonY = height * 0.65;
+      gridOffset = (gridOffset + 0.4) % 40;
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(0, horizonY, width, height - horizonY);
+      ctx.clip();
+
+      const gridColor = isDark ? 'rgba(0, 240, 255, 0.12)' : 'rgba(2, 132, 199, 0.08)';
+      ctx.strokeStyle = gridColor;
+      ctx.lineWidth = 1;
+
+      // Horizontal moving lines with exponential perspective
+      for (let y = horizonY + gridOffset; y < height; y += (y - horizonY) * 0.25 + 8) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(width, y);
+        ctx.stroke();
+      }
+
+      // Vertical converging lines to horizon center
+      const vanishingX = width * 0.5;
+      for (let x = -width; x < width * 2; x += 60) {
+        ctx.beginPath();
+        ctx.moveTo(vanishingX, horizonY);
+        ctx.lineTo(x, height);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      // Constellation Connecting Lines
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 120) {
-            const opacity = 1 - (dist / 120);
+          if (dist < 125) {
+            const opacity = 1 - (dist / 125);
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             ctx.strokeStyle = isDark 
-              ? `rgba(6, 182, 212, ${opacity * 0.25})` 
-              : `rgba(2, 132, 199, ${opacity * 0.18})`;
+              ? `rgba(0, 240, 255, ${opacity * 0.3})` 
+              : `rgba(2, 132, 199, ${opacity * 0.22})`;
             ctx.lineWidth = 1;
             ctx.stroke();
           }
         }
       }
 
-      // Connect to mouse if nearby
+      // Mouse Constellation Connection
       if (mouse.x !== null && mouse.y !== null) {
         for (let i = 0; i < particles.length; i++) {
           const dx = mouse.x - particles[i].x;
@@ -130,46 +289,46 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(mouse.x, mouse.y);
             ctx.strokeStyle = isDark 
-              ? `rgba(56, 189, 248, ${opacity * 0.4})` 
-              : `rgba(2, 132, 199, ${opacity * 0.3})`;
-            ctx.lineWidth = 1.2;
+              ? `rgba(0, 255, 157, ${opacity * 0.5})` 
+              : `rgba(2, 132, 199, ${opacity * 0.35})`;
+            ctx.lineWidth = 1.3;
             ctx.stroke();
           }
         }
       }
 
-      // Update and draw particles
+      // Update and Draw Particles
       particles.forEach(p => {
         p.update();
         p.draw(isDark);
       });
 
-      requestAnimationFrame(animate);
+      requestAnimationFrame(renderCanvas);
     }
 
-    animate();
+    renderCanvas();
   }
 
 
   /* ==========================================================================
-     02. Typewriter Effect for Hero
+     04. Terminal Console Typewriter Effect
      ========================================================================== */
   const typewriterElem = document.getElementById('typewriter-text');
   if (typewriterElem) {
     const roles = [
       'Aadhaar Trainer & Portal Developer',
       'ESD MeeSeva (Govt of Telangana)',
-      'Full-Stack Web Developer',
-      'AIML Engineer',
-      'React & TypeScript Specialist',
-      'UI/UX Driven Systems Builder'
+      '5 ASK Centers Automated // Supabase Sync',
+      'Full-Stack Web & AIML Engineer',
+      'VBIT Hyderabad (2022-2025)',
+      'UIDAI Client Systems & Release Auditor'
     ];
 
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    const typingSpeed = 70;
-    const deletingSpeed = 40;
+    const typingSpeed = 65;
+    const deletingSpeed = 35;
     const pauseDelay = 2200;
 
     function typeEffect() {
@@ -202,7 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ==========================================================================
-     03. Dark / Light Theme Toggle
+     05. Dark / Light Mode Toggle
      ========================================================================== */
   const themeToggle = document.getElementById('theme-toggle');
   const storedTheme = localStorage.getItem('vk_theme') || 'dark';
@@ -228,12 +387,13 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggle.addEventListener('click', () => {
       const isCurrentlyDark = document.body.classList.contains('dark-theme');
       applyTheme(isCurrentlyDark ? 'light' : 'dark');
+      playCyberTone('click');
     });
   }
 
 
   /* ==========================================================================
-     04. Mobile Navigation Menu Toggle
+     06. Mobile Menu Toggle
      ========================================================================== */
   const mobileToggle = document.getElementById('mobile-toggle');
   const navMenu = document.getElementById('nav-menu');
@@ -243,6 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileToggle.addEventListener('click', () => {
       navMenu.classList.toggle('open');
       mobileToggle.classList.toggle('active');
+      playCyberTone('click');
     });
 
     navLinks.forEach(link => {
@@ -255,7 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ==========================================================================
-     05. ScrollSpy - Active Navbar Link Highlight
+     07. ScrollSpy Active Highlight & Back to Top Button
      ========================================================================== */
   const sections = document.querySelectorAll('section[id]');
   window.addEventListener('scroll', () => {
@@ -263,7 +424,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(current => {
       const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 120;
+      const sectionTop = current.offsetTop - 140;
       const sectionId = current.getAttribute('id');
       const navLink = document.querySelector(`.nav-link[href*="${sectionId}"]`);
 
@@ -276,7 +437,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Back to top visibility
     const backToTopBtn = document.getElementById('back-to-top');
     if (backToTopBtn) {
       if (scrollY > 500) {
@@ -291,15 +451,16 @@ document.addEventListener('DOMContentLoaded', () => {
   if (backToTopBtn) {
     backToTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      playCyberTone('click');
     });
   }
 
 
   /* ==========================================================================
-     06. Project Category Filtering
+     08. Project Filtering Engine
      ========================================================================== */
-  const projectFilterBtns = document.querySelectorAll('#project-filters .filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
+  const projectFilterBtns = document.querySelectorAll('#project-filters .cyber-filter-btn');
+  const projectCards = document.querySelectorAll('.cyber-project-card');
 
   projectFilterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -329,10 +490,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ==========================================================================
-     07. Skills Category Filtering
+     09. Skills Category Filtering
      ========================================================================== */
-  const skillFilterBtns = document.querySelectorAll('#skills-filter .filter-btn');
-  const skillCards = document.querySelectorAll('.skill-card');
+  const skillFilterBtns = document.querySelectorAll('#skills-filter .cyber-filter-btn');
+  const skillCards = document.querySelectorAll('.skill-cyber-node');
 
   skillFilterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -354,13 +515,58 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ==========================================================================
-     08. Project Architecture Modal
+     10. Dynamic 3D Card Tilt & Specular Sheen (Hero Photo + Cards)
+     ========================================================================== */
+  // Hero Photo Pod Extreme Hover Zoom & 3D Tilt
+  const avatarPod = document.getElementById('avatar-holo-pod');
+  if (avatarPod) {
+    avatarPod.addEventListener('mousemove', (e) => {
+      const rect = avatarPod.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = ((y - centerY) / centerY) * -15;
+      const rotateY = ((x - centerX) / centerX) * 15;
+
+      avatarPod.style.transform = `perspective(1000px) scale(1.22) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-12px)`;
+    });
+
+    avatarPod.addEventListener('mouseleave', () => {
+      avatarPod.style.transform = 'perspective(1000px) scale(1) rotateX(0deg) rotateY(0deg) translateY(0)';
+    });
+  }
+
+  // 3D Tilt for Project Cards
+  document.querySelectorAll('.cyber-project-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = ((y - centerY) / centerY) * -6;
+      const rotateY = ((x - centerX) / centerX) * 6;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+    });
+  });
+
+
+  /* ==========================================================================
+     11. Project Architecture Blueprint Modal
      ========================================================================== */
   const projectData = {
     'esd-ask-desk': {
       title: 'ESD ASK Desk – Operations & EOD Management Portal',
       subtitle: 'Multi-Center Operations & Automated EOD Analytics',
-      badge: 'Operations & Analytics (Govt. TS)',
+      badge: 'Operations & Analytics // Govt TS',
       desc: 'Developed a comprehensive multi-center operations web portal for 5 Aadhaar Seva Kendra (ASK) centers with real-time Supabase cloud synchronization. Automated client-side parsing of official daily EOD reports (Excel/PDF) using SheetJS and regex extraction, eliminating manual calculation errors. Built an interactive executive dashboard with day-by-day compliance tracking, operator deployment rosters, and hardware grievance ticketing.',
       features: [
         'Multi-center operations web portal deployed across 5 Aadhaar Seva Kendra (ASK) centers',
@@ -487,7 +693,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const modal = document.getElementById('project-modal');
   const modalClose = document.getElementById('modal-close');
-  const archButtons = document.querySelectorAll('.btn-arch');
+  const archButtons = document.querySelectorAll('.btn-blueprint');
 
   archButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -501,26 +707,23 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('modal-badge').textContent = data.badge;
         document.getElementById('modal-desc').textContent = data.desc;
 
-        // Features
         const featuresContainer = document.getElementById('modal-features');
         featuresContainer.innerHTML = '';
         data.features.forEach(feat => {
           const li = document.createElement('li');
-          li.innerHTML = `<i class="fa-solid fa-check"></i> <span>${feat}</span>`;
+          li.innerHTML = `<i class="fa-solid fa-check text-cyan"></i> <span>${feat}</span>`;
           featuresContainer.appendChild(li);
         });
 
-        // Tech tags
         const techContainer = document.getElementById('modal-tech');
         techContainer.innerHTML = '';
         data.tech.forEach(t => {
           const span = document.createElement('span');
-          span.className = 'tech-tag';
+          span.className = 'tech-pill';
           span.textContent = t;
           techContainer.appendChild(span);
         });
 
-        // Links
         const liveLink = document.getElementById('modal-live-link');
         const githubLink = document.getElementById('modal-github-link');
         liveLink.href = data.liveUrl;
@@ -528,6 +731,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        playCyberTone('click');
       }
     });
   });
@@ -536,6 +740,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modal) {
       modal.classList.remove('active');
       document.body.style.overflow = '';
+      playCyberTone('click');
     }
   }
 
@@ -559,31 +764,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ==========================================================================
-     09. Interactive Cursor Tilt & Zoom on Hero Profile Photo
-     ========================================================================== */
-  const avatarFrame = document.getElementById('avatar-frame');
-  if (avatarFrame) {
-    avatarFrame.addEventListener('mousemove', (e) => {
-      const rect = avatarFrame.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const rotateX = ((y - centerY) / centerY) * -12;
-      const rotateY = ((x - centerX) / centerX) * 12;
-
-      avatarFrame.style.transform = `perspective(1000px) scale(1.18) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
-    });
-
-    avatarFrame.addEventListener('mouseleave', () => {
-      avatarFrame.style.transform = 'perspective(1000px) scale(1) rotateX(0deg) rotateY(0deg) translateY(0)';
-    });
-  }
-
-
-  /* ==========================================================================
-     10. Contact Form Simulation
+     12. Transmission Console Form Simulation
      ========================================================================== */
   const contactForm = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
@@ -595,26 +776,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (formSubmitBtn) {
         formSubmitBtn.disabled = true;
-        formSubmitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending message...';
+        formSubmitBtn.innerHTML = '<span class="cyber-btn-content"><i class="fa-solid fa-spinner fa-spin"></i> TRANSMITTING PAYLOAD...</span>';
       }
+      playCyberTone('click');
 
       setTimeout(() => {
         if (formStatus) {
           formStatus.className = 'form-status success';
-          formStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> Thank you! Your message has been sent successfully. Vinay will reply soon.';
+          formStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> TRANSMISSION CONFIRMED // PACKET RECEIVED BY VINAY KAMBLEY';
         }
 
         contactForm.reset();
+        playCyberTone('hover');
 
         if (formSubmitBtn) {
           formSubmitBtn.disabled = false;
-          formSubmitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+          formSubmitBtn.innerHTML = '<span class="cyber-btn-content"><i class="fa-solid fa-paper-plane"></i> DISPATCH TRANSMISSION</span>';
         }
 
         setTimeout(() => {
           if (formStatus) formStatus.innerHTML = '';
         }, 6000);
-      }, 1200);
+      }, 1400);
     });
   }
 
