@@ -1,38 +1,1105 @@
-<!doctype html>
-<html lang="en" class="dark scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vinay Kambley | Web Developer &amp; AIML Engineer</title>
-    <meta name="description" content="Portfolio of Vinay Kambley - Web Developer &amp; AIML Engineer specializing in React, TypeScript, Full-Stack applications, and intelligent UI experiences." />
-    <meta name="keywords" content="Vinay Kambley, Web Developer, AIML Engineer, React Developer, Full Stack, Portfolio, VBIT, TypeScript" />
-    
-    <!-- OpenGraph / Social Meta -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Vinay Kambley | Web Developer &amp; AIML Engineer" />
-    <meta property="og:description" content="Explore full-stack web applications, AIML projects, and engineering capabilities." />
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <title>Vinay Kambley | Web Developer &amp; AIML Engineer</title>
+  <meta name="description" content="Portfolio of Vinay Kambley - Aadhaar Trainer & Portal Developer at ESD MeeSeva (Govt of Telangana), Full-Stack Web Developer, and AIML Engineer." />
+  <meta name="keywords" content="Vinay Kambley, ESD MeeSeva, Aadhaar Trainer, Portal Developer, Web Developer, AIML Engineer, React, TypeScript, Full-Stack" />
+  
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Vinay Kambley | Web Developer &amp; AIML Engineer" />
+  <meta property="og:description" content="Explore live enterprise portals, AIML applications, and professional government experience." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body class="dark-theme">
 
-    <!-- Google Fonts: Outfit (Headings) and Plus Jakarta Sans (Body) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Theme Flash Prevention -->
-    <script>
-      (function() {
-        const stored = localStorage.getItem('vk_portfolio_theme');
-        if (stored === 'light') {
-          document.documentElement.classList.remove('dark');
-        } else {
-          document.documentElement.classList.add('dark');
-        }
-      })();
-    </script>
-    <script type="module" crossorigin src="./index.js"></script>
-    <link rel="stylesheet" crossorigin href="./index.css">
-  </head>
-  <body class="bg-slate-50 dark:bg-[#0B0F19] text-slate-800 dark:text-slate-100 font-sans selection:bg-cyan-500 selection:text-white transition-colors duration-300 overflow-x-hidden antialiased">
-    <div id="root"></div>
-  </body>
+  <!-- Interactive Futuristic Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-brand">
+        <span class="brand-badge">VK</span>
+        <span class="brand-name">Vinay<span class="text-cyan">.dev</span></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active"><span>01.</span> Home</a></li>
+          <li><a href="#about" class="nav-link"><span>02.</span> About</a></li>
+          <li><a href="#skills" class="nav-link"><span>03.</span> Skills</a></li>
+          <li><a href="#projects" class="nav-link"><span>04.</span> Projects</a></li>
+          <li><a href="#experience" class="nav-link experience-pill"><span>05.</span> Experience <span class="badge-dot"></span></a></li>
+          <li><a href="#education" class="nav-link"><span>06.</span> Education</a></li>
+          <li><a href="#certifications" class="nav-link"><span>07.</span> Certifications</a></li>
+          <li><a href="#contact" class="nav-link"><span>08.</span> Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle Theme">
+          <i class="fa-solid fa-moon moon-icon"></i>
+          <i class="fa-solid fa-sun sun-icon"></i>
+        </button>
+
+        <a href="#contact" class="btn-hire">Connect</a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Open mobile navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01. Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="hero-glow hero-glow-1"></div>
+      <div class="hero-glow hero-glow-2"></div>
+      
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-status-pill">
+            <span class="pulse-ring"></span>
+            <span class="pulse-core"></span>
+            <span>Available for Full-time Roles &amp; High-Impact Opportunities</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="greeting">Hi, I'm</span>
+            <span class="name-gradient">Vinay Kambley</span>
+          </h1>
+
+          <div class="hero-typewriter">
+            <span class="typewriter-prefix">&gt;&nbsp;</span>
+            <span class="typewriter-text" id="typewriter-text">Aadhaar Trainer &amp; Portal Developer</span>
+            <span class="typewriter-cursor">|</span>
+          </div>
+
+          <p class="hero-description">
+            Aadhaar Trainer &amp; Portal Developer at <strong>ESD MeeSeva (Govt of Telangana)</strong>. 
+            I build mission-critical enterprise systems, automated workflows, and high-performance full-stack web applications with clean architecture and human-centered UX.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#experience" class="btn btn-primary">
+              <i class="fa-solid fa-briefcase"></i> View Experience
+            </a>
+            <a href="#projects" class="btn btn-outline">
+              <i class="fa-solid fa-code"></i> Explore Projects
+            </a>
+            <a href="https://linkedin.com/in/kambley-vinay-3a1224253/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" title="LinkedIn Profile">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/vinaykambley7" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" title="GitHub Profile">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+
+          <div class="hero-mini-stats">
+            <div class="mini-stat-item">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Years Hands-on</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="mini-stat-item">
+              <span class="stat-number">8+</span>
+              <span class="stat-label">Production Apps</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="mini-stat-item">
+              <span class="stat-number">5</span>
+              <span class="stat-label">Govt Centers Automated</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-avatar-wrapper" id="hero-avatar-wrapper">
+            <!-- Cybernetic Orbit Rings -->
+            <div class="avatar-orbit orbit-outer"></div>
+            <div class="avatar-orbit orbit-inner"></div>
+
+            <!-- Profile Image Frame with Cursor Hover Zoom -->
+            <div class="avatar-frame" id="avatar-frame">
+              <img 
+                src="./vinay-transparent.png" 
+                alt="Vinay Kambley - Aadhaar Trainer & Portal Developer" 
+                class="avatar-img" 
+                id="hero-img"
+                onerror="this.src='https://res.cloudinary.com/dmy7kknrc/image/upload/v1788937514/WhatsApp_Image_2026-09-09_at_12.34.03_PM_gdo6qr.jpg'"
+              />
+              <div class="avatar-glass-overlay"></div>
+            </div>
+
+            <!-- Floating Badges -->
+            <div class="floating-badge badge-top-right">
+              <i class="fa-solid fa-landmark"></i>
+              <div>
+                <span class="badge-title">ESD MeeSeva</span>
+                <span class="badge-sub">Govt of Telangana</span>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-bottom-left">
+              <i class="fa-solid fa-brain"></i>
+              <div>
+                <span class="badge-title">AIML &amp; Web</span>
+                <span class="badge-sub">Full-Stack Engineer</span>
+              </div>
+            </div>
+
+            <div class="avatar-hover-tip">
+              <i class="fa-solid fa-hand-pointer"></i> Hover over photo to zoom
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-down-indicator">
+        <a href="#about" aria-label="Scroll down to About section">
+          <span class="mouse-icon"><span class="mouse-wheel"></span></span>
+          <span class="scroll-text">SCROLL DOWN</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 02. About Section -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">02. DISCOVERY</span>
+          <h2 class="section-title">About <span class="text-cyan">Me</span></h2>
+          <p class="section-subtitle">Bridging data-driven intelligence, government-scale operations, and sleek software engineering</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-narrative">
+            <h3 class="about-heading">Engineering digital solutions with purpose &amp; precision</h3>
+            <p>
+              I'm a dedicated <strong>Web Developer and AIML Engineer</strong> with proven experience architecting government enterprise portals, conducting statewide technical training, and building responsive, interactive web applications from concept to production.
+            </p>
+            <p>
+              Currently, I serve as an <strong>Aadhaar Trainer &amp; Portal Developer</strong> at <strong>The Commissioner, Electronic Service Delivery (ESD) / MeeSeva</strong> under the IT, E&amp;C Department, Government of Telangana. In this role, I architected and deployed the <strong>ASK Managers Portal</strong> across 5 ASK centers, automated daily end-of-day (EOD) reporting workflows, conduct technical training for operators, audit UIDAI client releases, and resolve operational escalations.
+            </p>
+            <p>
+              My journey began with a <strong>Diploma in Industrial Electronics</strong> from GIOE (2018–2022) and a 6-month industrial internship at <strong>HBL Power Systems Ltd.</strong>, instilling rigorous troubleshooting discipline and systems awareness. I am currently advancing my engineering depth through a <strong>B.Tech in Artificial Intelligence &amp; Machine Learning</strong> at VBIT (2022–2025).
+            </p>
+
+            <div class="about-highlights-list">
+              <div class="highlight-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Enterprise Architecture: Supabase, PostgreSQL, Firebase &amp; SheetJS</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Statewide Technical Operations &amp; UIDAI Client Release Auditing</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Full-Stack Mastery: React, TypeScript, Next.js &amp; Modern Web APIs</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-cards-container">
+            <div class="about-stat-card">
+              <div class="stat-card-icon"><i class="fa-solid fa-briefcase"></i></div>
+              <div class="stat-card-val">Present Role</div>
+              <div class="stat-card-title">ESD MeeSeva (Govt TS)</div>
+              <p class="stat-card-desc">Aadhaar Trainer &amp; Portal Developer</p>
+            </div>
+
+            <div class="about-stat-card">
+              <div class="stat-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div class="stat-card-val">B.Tech AIML</div>
+              <div class="stat-card-title">VBIT (2022 - 2025)</div>
+              <p class="stat-card-desc">AI algorithms &amp; web architecture</p>
+            </div>
+
+            <div class="about-stat-card">
+              <div class="stat-card-icon"><i class="fa-solid fa-microchip"></i></div>
+              <div class="stat-card-val">Industrial Systems</div>
+              <div class="stat-card-title">HBL Power Systems</div>
+              <p class="stat-card-desc">6 Months Industrial Trainee</p>
+            </div>
+
+            <div class="about-stat-card">
+              <div class="stat-card-icon"><i class="fa-solid fa-layer-group"></i></div>
+              <div class="stat-card-val">8+ Projects</div>
+              <div class="stat-card-title">Shipped &amp; Live</div>
+              <p class="stat-card-desc">Full-Stack, enterprise &amp; utilities</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. Skills Section -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">03. CAPABILITIES</span>
+          <h2 class="section-title">Technical <span class="text-cyan">Stack</span></h2>
+          <p class="section-subtitle">Core technologies, frameworks, databases, and engineering tools I leverage daily</p>
+        </div>
+
+        <!-- Skills Filter Tabs -->
+        <div class="filter-tabs" id="skills-filter">
+          <button class="filter-btn active" data-filter="all">All Tech</button>
+          <button class="filter-btn" data-filter="frontend">Frontend</button>
+          <button class="filter-btn" data-filter="backend">Backend &amp; DB</button>
+          <button class="filter-btn" data-filter="languages">Languages</button>
+          <button class="filter-btn" data-filter="tools">Tools &amp; Design</button>
+        </div>
+
+        <div class="skills-grid" id="skills-grid">
+          <!-- Frontend -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-icon"><i class="fa-brands fa-react"></i></div>
+            <div class="skill-info">
+              <h4>React</h4>
+              <span class="skill-tag">Frontend &bull; Advanced</span>
+            </div>
+            <div class="skill-meter"><div class="skill-fill" style="width: 92%"></div></div>
+            <span class="skill-pct">92%</span>
+          </div>
+
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+            <div class="skill-info">
+              <h4>JavaScript (ES6+)</h4>
+              <span class="skill-tag">Core Web &bull; Advanced</span>
+            </div>
+            <div class="skill-meter"><div class="skill-fill" style="width: 94%"></div></div>
+            <span class="skill-pct">94%</span>
+          </div>
+
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+            <div class="skill-info">
+              <h4>TypeScript</h4>
+              <span class="skill-tag">Frontend &bull; Strongly Typed</span>
+            </div>
+            <div class="skill-meter"><div class="skill-fill" style="width: 88%"></div></div>
+            <span class="skill-pct">88%</span>
+          </div>
+
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-icon"><i class="fa-solid fa-wind"></i></div>
+            <div class="skill-info">
+              <h4>Tailwind CSS</h4>
+              <span class="skill-tag">Styling &bull; Design Systems</span>
+            </div>
+            <div class="skill-meter"><div class="skill-fill" style="width: 90%"></div></div>
+            <span class="skill-pct">90%</span>
+          </div>
+
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+            <div class="skill-info">
+              <h4>HTML5 &amp; CSS3</h4>
+              <span class="skill-tag">Semantic &bull; Responsive</span>
+            </div>
+            <div class="skill-meter"><div class="skill-fill" style="width: 96%"></div></div>
+            <span class="skill-pct">96%</span>
+          </div>
+
+          <!-- Backend & Database -->
+          <div class="skill-card" data-category="backend">
+            <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+            <div class="skill-info">
+              <h4>Supabase &amp; PostgreSQL</h4>
+              <span class="skill-tag">Database &bull; Realtime</span>
+            </div>
+            <div class="skill-meter"><div class="skill-fill" style="width: 88%"></div></div>
+            <span class="skill-pct">88%</span>
+          </div>
+
+          <div class="skill-card" data-category="backend">
+            <div class="skill-icon"><i class="fa-solid fa-fire"></i></div>
+            <div class="skill-info">
+              <h4>Firebase &amp; Firestore</h4>
+              <span class="skill-tag">Cloud &bull; Real-time Sync</span>
+            </div>
+            <div class="skill-meter"><div class="skill-fill" style="width: 90%"></div></div>
+            <span class="skill-pct">90%</span>
+          </div>
+
+          <div class="skill-card" data-category="backend">
+            <div class="skill-icon"><i class="fa-brands fa-node-js"></i></div>
+            <div class="skill-info">
+              <h4>Node.js &amp; Express</h4>
+              <span class="skill-tag">Backend &bull; REST APIs</span>
+            </div>
+            <div class="skill-meter"><div class="skill-fill" style="width: 86%"></div></div>
+            <span class="skill-pct">86%</span>
+          </div>
+
+          <div class="skill-card" data-category="backend">
+            <div class="skill-icon"><i class="fa-solid fa-file-excel"></i></div>
+            <div class="skill-info">
+              <h4>SheetJS &amp; Data Parsers</h4>
+              <span class="skill-tag">Analytics &bull; EOD Automation</span>
+            </div>
+            <div class="skill-meter"><div class="skill-fill" style="width: 92%"></div></div>
+            <span class="skill-pct">92%</span>
+          </div>
+
+          <!-- Languages -->
+          <div class="skill-card" data-category="languages">
+            <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+            <div class="skill-info">
+              <h4>Python (AIML)</h4>
+              <span class="skill-tag">Algorithms &bull; Scripting</span>
+            </div>
+            <div class="skill-meter"><div class="skill-fill" style="width: 88%"></div></div>
+            <span class="skill-pct">88%</span>
+          </div>
+
+          <div class="skill-card" data-category="languages">
+            <div class="skill-icon"><i class="fa-solid fa-c"></i></div>
+            <div class="skill-info">
+              <h4>C / C++ Basics</h4>
+              <span class="skill-tag">Low-Level &bull; Foundations</span>
+            </div>
+            <div class="skill-meter"><div class="skill-fill" style="width: 75%"></div></div>
+            <span class="skill-pct">75%</span>
+          </div>
+
+          <!-- Tools & Design -->
+          <div class="skill-card" data-category="tools">
+            <div class="skill-icon"><i class="fa-brands fa-git-alt"></i></div>
+            <div class="skill-info">
+              <h4>Git &amp; GitHub</h4>
+              <span class="skill-tag">Version Control &bull; CI/CD</span>
+            </div>
+            <div class="skill-meter"><div class="skill-fill" style="width: 90%"></div></div>
+            <span class="skill-pct">90%</span>
+          </div>
+
+          <div class="skill-card" data-category="tools">
+            <div class="skill-icon"><i class="fa-brands fa-figma"></i></div>
+            <div class="skill-info">
+              <h4>Figma &amp; UI/UX</h4>
+              <span class="skill-tag">Wireframing &bull; Design Systems</span>
+            </div>
+            <div class="skill-meter"><div class="skill-fill" style="width: 88%"></div></div>
+            <span class="skill-pct">88%</span>
+          </div>
+
+          <div class="skill-card" data-category="tools">
+            <div class="skill-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="skill-info">
+              <h4>Chart.js &amp; Visuals</h4>
+              <span class="skill-tag">Dashboards &bull; Metrics</span>
+            </div>
+            <div class="skill-meter"><div class="skill-fill" style="width: 89%"></div></div>
+            <span class="skill-pct">89%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. Projects Section -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">04. PORTFOLIO</span>
+          <h2 class="section-title">Featured <span class="text-cyan">Projects</span></h2>
+          <p class="section-subtitle">Real-world applications, government automation engines, and interactive web systems</p>
+        </div>
+
+        <!-- Project Filter Buttons -->
+        <div class="filter-tabs" id="project-filters">
+          <button class="filter-btn active" data-filter="all">All Projects (8)</button>
+          <button class="filter-btn" data-filter="enterprise">Enterprise Systems</button>
+          <button class="filter-btn" data-filter="fullstack">Full-Stack Apps</button>
+          <button class="filter-btn" data-filter="education">EdTech</button>
+          <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+          <button class="filter-btn" data-filter="web">Web Portals</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <!-- 1. ESD ASK Desk -->
+          <article class="project-card featured" data-category="enterprise">
+            <div class="project-header">
+              <div class="project-badge"><i class="fa-solid fa-star"></i> Operations &amp; Analytics</div>
+              <div class="project-links">
+                <a href="https://ask-managers-portal.web.app/" target="_blank" rel="noopener noreferrer" title="Live Portal" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="https://github.com/vinaykambley/esd-ask-desk" target="_blank" rel="noopener noreferrer" title="GitHub Source" class="proj-link"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-sub">Multi-Center Operations &amp; Automated EOD Analytics</span>
+              <h3 class="project-title">ESD ASK Desk – Operations &amp; EOD Management Portal</h3>
+              <p class="project-desc">
+                Developed a multi-center operations web portal for 5 Aadhaar Seva Kendra (ASK) centers with real-time Supabase cloud synchronization. Automated client-side parsing of official daily EOD reports (Excel/PDF) using SheetJS and regex extraction, eliminating manual calculation errors. Built an interactive executive dashboard with day-by-day compliance tracking, operator deployment rosters, and hardware grievance ticketing.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Supabase</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">SheetJS</span>
+                <span class="tech-tag">Chart.js</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <button class="btn-arch" data-project="esd-ask-desk"><i class="fa-solid fa-diagram-project"></i> Architecture Specs</button>
+              <a href="https://ask-managers-portal.web.app/" target="_blank" rel="noopener noreferrer" class="btn-demo">Launch Portal &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 2. SkillConnect -->
+          <article class="project-card featured" data-category="fullstack">
+            <div class="project-header">
+              <div class="project-badge"><i class="fa-solid fa-bolt"></i> Featured Full-Stack</div>
+              <div class="project-links">
+                <a href="https://skillconnect-app.netlify.app/" target="_blank" rel="noopener noreferrer" title="Live App" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="https://github.com/vinaykambley/skillconnect" target="_blank" rel="noopener noreferrer" title="GitHub Source" class="proj-link"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-sub">On-Demand Skilled Service Marketplace</span>
+              <h3 class="project-title">SkillConnect</h3>
+              <p class="project-desc">
+                Full-stack marketplace connecting homeowners with verified local service professionals (electricians, plumbers, carpenters, painters). Features a 13-step provider onboarding wizard, 10+ photo showcase gallery, 9-stage booking lifecycle, direct in-app messaging, verified reviews, and admin verification desk.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">React 19</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">Supabase</span>
+                <span class="tech-tag">PostgreSQL</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <button class="btn-arch" data-project="skillconnect"><i class="fa-solid fa-diagram-project"></i> Architecture Specs</button>
+              <a href="https://skillconnect-app.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn-demo">Live Demo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 3. Engineering Daily Work Portal -->
+          <article class="project-card featured" data-category="enterprise">
+            <div class="project-header">
+              <div class="project-badge"><i class="fa-solid fa-building"></i> Enterprise Architecture</div>
+              <div class="project-links">
+                <a href="https://engineering-work-portal.web.app" target="_blank" rel="noopener noreferrer" title="Live Portal" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="https://github.com/vinaykambley/engineering-work-portal" target="_blank" rel="noopener noreferrer" title="GitHub Source" class="proj-link"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-sub">Enterprise Reporting &amp; Workflow Platform</span>
+              <h3 class="project-title">Engineering Daily Work &amp; Verification Portal</h3>
+              <p class="project-desc">
+                Mission-critical enterprise reporting platform with a 3-tier approval hierarchy (Engineer &rarr; Team Lead &rarr; Plant Head), real-time Firestore onSnapshot synchronization, touch-optimized field logging, side-by-side audit comparisons, and automated 1-click Excel/PDF export engines.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">Firestore</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <button class="btn-arch" data-project="daily-work-portal"><i class="fa-solid fa-diagram-project"></i> Architecture Specs</button>
+              <a href="https://engineering-work-portal.web.app" target="_blank" rel="noopener noreferrer" class="btn-demo">Live Demo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 4. EdPlus Nihongo Path -->
+          <article class="project-card" data-category="education">
+            <div class="project-header">
+              <div class="project-badge"><i class="fa-solid fa-language"></i> EdTech &amp; Gamification</div>
+              <div class="project-links">
+                <a href="https://edplus-nihongo-path.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Site" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="https://github.com/vinaykambley/edplus-nihongo-path" target="_blank" rel="noopener noreferrer" title="GitHub Source" class="proj-link"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-sub">Japanese Language Learning Platform</span>
+              <h3 class="project-title">EdPlus-Nihongo-Path</h3>
+              <p class="project-desc">
+                Comprehensive Japanese learning portal guiding students through Hiragana, Katakana, and Kanji. Includes retention quizzes, audio pronunciation guides, visual milestone badges, and fast server-rendered lesson views.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Tailwind CSS</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <button class="btn-arch" data-project="edplus-nihongo-path"><i class="fa-solid fa-diagram-project"></i> Architecture Specs</button>
+              <a href="https://edplus-nihongo-path.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-demo">Live Demo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 5. CareConnect -->
+          <article class="project-card" data-category="healthcare">
+            <div class="project-header">
+              <div class="project-badge"><i class="fa-solid fa-heart-pulse"></i> Healthcare System</div>
+              <div class="project-links">
+                <a href="https://vinaykambley7.github.io/Careconnect/" target="_blank" rel="noopener noreferrer" title="Live Site" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="https://github.com/vinaykambley7/Careconnect" target="_blank" rel="noopener noreferrer" title="GitHub Source" class="proj-link"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-sub">Role-Based Clinical Management System</span>
+              <h3 class="project-title">CareConnect</h3>
+              <p class="project-desc">
+                Role-based clinic system with 3 specialized modules: Receptionist patient intake &amp; doctor assignment, Doctor clinical records &amp; digital prescriptions, and Pharmacist medicine dispensing confirmation.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">LocalDB</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <button class="btn-arch" data-project="careconnect"><i class="fa-solid fa-diagram-project"></i> Architecture Specs</button>
+              <a href="https://vinaykambley7.github.io/Careconnect/" target="_blank" rel="noopener noreferrer" class="btn-demo">Live Demo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 6. Ticket World -->
+          <article class="project-card" data-category="web">
+            <div class="project-header">
+              <div class="project-badge"><i class="fa-solid fa-ticket"></i> Entertainment Portal</div>
+              <div class="project-links">
+                <a href="https://vinaykambley7.github.io/ticketWorld/" target="_blank" rel="noopener noreferrer" title="Live Site" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="https://github.com/vinaykambley7/ticketWorld" target="_blank" rel="noopener noreferrer" title="GitHub Source" class="proj-link"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-sub">Event, Movie &amp; Concert Booking Platform</span>
+              <h3 class="project-title">Ticket World</h3>
+              <p class="project-desc">
+                Interactive ticket booking application for cinema, concerts, and live theatre. Features dynamic category filtering, interactive seat layout selector, real-time pricing computation, and instant ticket preview.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">DOM Scripting</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <button class="btn-arch" data-project="ticket-world"><i class="fa-solid fa-diagram-project"></i> Architecture Specs</button>
+              <a href="https://vinaykambley7.github.io/ticketWorld/" target="_blank" rel="noopener noreferrer" class="btn-demo">Live Demo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 7. Grievance Support Hub -->
+          <article class="project-card" data-category="web">
+            <div class="project-header">
+              <div class="project-badge"><i class="fa-solid fa-headset"></i> Support &amp; Ticketing</div>
+              <div class="project-links">
+                <a href="https://gravience-support-hub.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Site" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="https://github.com/vinaykambley/grievance-support-hub" target="_blank" rel="noopener noreferrer" title="GitHub Source" class="proj-link"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-sub">Aadhaar Training Support &amp; Resolution Tracker</span>
+              <h3 class="project-title">Grievance Support Hub</h3>
+              <p class="project-desc">
+                Streamlined grievance intake portal for training operations. Generates unique tracked Grievance IDs, displays dynamic stage-by-stage resolution status timelines, and categorizes operational issues.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Tailwind CSS</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <button class="btn-arch" data-project="grievance-support-hub"><i class="fa-solid fa-diagram-project"></i> Architecture Specs</button>
+              <a href="https://gravience-support-hub.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-demo">Live Demo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- 8. S-Truck Delivery -->
+          <article class="project-card" data-category="web">
+            <div class="project-header">
+              <div class="project-badge"><i class="fa-solid fa-truck"></i> Logistics System</div>
+              <div class="project-links">
+                <a href="https://vinaykambley.github.io/s-truck-delivery/" target="_blank" rel="noopener noreferrer" title="Live Site" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="https://github.com/vinaykambley/s-truck-delivery" target="_blank" rel="noopener noreferrer" title="GitHub Source" class="proj-link"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-sub">Industrial &amp; Goods Transport Booking</span>
+              <h3 class="project-title">S-Truck Delivery</h3>
+              <p class="project-desc">
+                Logistics web portal for on-demand vehicle dispatch. Select vehicle tonnage categories, configure multi-point route waypoints, and schedule dispatch dates with instant estimates.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <button class="btn-arch" data-project="s-truck-delivery"><i class="fa-solid fa-diagram-project"></i> Architecture Specs</button>
+              <a href="https://vinaykambley.github.io/s-truck-delivery/" target="_blank" rel="noopener noreferrer" class="btn-demo">Live Demo &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. Work Experience Section (DEDICATED FEATURE) -->
+    <section class="section experience-section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag highlight-tag">05. CAREER HIGHLIGHTS</span>
+          <h2 class="section-title">Work <span class="text-cyan">Experience</span></h2>
+          <p class="section-subtitle">Real-world engineering impact, government portal architecture, and statewide technical operations</p>
+        </div>
+
+        <div class="experience-timeline">
+          <!-- 1. ESD / MeeSeva - PRIMARY ACTIVE ROLE -->
+          <div class="exp-timeline-card active-role">
+            <div class="exp-timeline-dot">
+              <span class="pulse-ring"></span>
+              <i class="fa-solid fa-landmark"></i>
+            </div>
+            
+            <div class="exp-card-inner">
+              <div class="exp-header">
+                <div class="exp-role-info">
+                  <div class="exp-status-badge">
+                    <span class="live-dot"></span> Active Role (Present)
+                  </div>
+                  <h3 class="exp-role-title">Aadhaar Trainer &amp; Portal Developer</h3>
+                  <h4 class="exp-company-title">
+                    <i class="fa-solid fa-building-columns"></i> The Commissioner, Electronic Service Delivery (ESD) / MeeSeva
+                  </h4>
+                  <p class="exp-dept">
+                    <i class="fa-solid fa-shield-halved"></i> IT, E&amp;C Department, Government of Telangana
+                  </p>
+                </div>
+                <div class="exp-meta-badge">
+                  <span class="exp-period"><i class="fa-regular fa-calendar-check"></i> Present</span>
+                  <span class="exp-loc"><i class="fa-solid fa-location-dot"></i> Hyderabad, India</span>
+                </div>
+              </div>
+
+              <div class="exp-body">
+                <p class="exp-overview">
+                  Serving as Aadhaar Trainer &amp; Portal Developer under the Information Technology, Electronics &amp; Communications (ITE&amp;C) Department, Government of Telangana. Driving digital transformation, daily operations automation, technical training, and system auditing across Aadhaar Seva Kendra (ASK) centers:
+                </p>
+
+                <!-- Exact 4 User Responsibilities Featured Prominently -->
+                <ul class="exp-highlights-list">
+                  <li>
+                    <div class="bullet-icon"><i class="fa-solid fa-code-branch"></i></div>
+                    <div class="bullet-text">
+                      <strong>Architected, deployed, and maintain the ASK Managers Portal across 5 ASK centers</strong>, and automated daily end-of-day (EOD) reporting workflows to eliminate manual calculation errors.
+                    </div>
+                  </li>
+                  <li>
+                    <div class="bullet-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                    <div class="bullet-text">
+                      <strong>Conduct comprehensive technical training for Aadhaar operators across Telangana</strong> on official UIDAI Standard Operating Procedures (SOPs), process guidelines, and visual instructional modules.
+                    </div>
+                  </li>
+                  <li>
+                    <div class="bullet-icon"><i class="fa-solid fa-shield-check"></i></div>
+                    <div class="bullet-text">
+                      <strong>Audit and evaluate new UIDAI Aadhaar client version releases</strong>, analyzing system modifications, troubleshooting client-side runtime errors, and ensuring zero operational downtime.
+                    </div>
+                  </li>
+                  <li>
+                    <div class="bullet-icon"><i class="fa-solid fa-headset"></i></div>
+                    <div class="bullet-text">
+                      <strong>Manage end-to-end grievance redressal across the ESD agency</strong>, resolving technical issues, enrollment sync errors, and operational escalations in close coordination with ASK managers and operators.
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="exp-tech-pills">
+                  <span class="pill">JavaScript</span>
+                  <span class="pill">Supabase (PostgreSQL)</span>
+                  <span class="pill">Firebase</span>
+                  <span class="pill">SheetJS</span>
+                  <span class="pill">Chart.js</span>
+                  <span class="pill">UIDAI Client Systems</span>
+                  <span class="pill">Workflow Automation</span>
+                  <span class="pill">Technical Training</span>
+                </div>
+
+                <div class="exp-cta">
+                  <a href="https://ask-managers-portal.web.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Explore ASK Managers Portal
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. HBL Power Systems Ltd. -->
+          <div class="exp-timeline-card">
+            <div class="exp-timeline-dot">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            
+            <div class="exp-card-inner">
+              <div class="exp-header">
+                <div class="exp-role-info">
+                  <div class="exp-status-badge badge-past">Industrial Training</div>
+                  <h3 class="exp-role-title">Industrial Systems Engineering Trainee</h3>
+                  <h4 class="exp-company-title">
+                    <i class="fa-solid fa-industry"></i> HBL Power Systems Ltd.
+                  </h4>
+                  <p class="exp-dept">
+                    <i class="fa-solid fa-microchip"></i> Industrial Electronics &amp; Systems Division
+                  </p>
+                </div>
+                <div class="exp-meta-badge">
+                  <span class="exp-period"><i class="fa-regular fa-calendar"></i> 2021 – 2022 (6 Months)</span>
+                  <span class="exp-loc"><i class="fa-solid fa-location-dot"></i> Hyderabad, India</span>
+                </div>
+              </div>
+
+              <div class="exp-body">
+                <p class="exp-overview">
+                  Completed 6 months of comprehensive industrial engineering training in electronic systems, power electronics testing, quality verification, and automated industrial workflows:
+                </p>
+
+                <ul class="exp-highlights-list">
+                  <li>
+                    <div class="bullet-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <div class="bullet-text">
+                      Hands-on experience with industrial electronics, circuitry diagnostics, and quality testing under strict plant quality standards.
+                    </div>
+                  </li>
+                  <li>
+                    <div class="bullet-icon"><i class="fa-solid fa-gears"></i></div>
+                    <div class="bullet-text">
+                      Collaborated closely with plant engineers and technical operations staff to streamline testing cycles and verification procedures.
+                    </div>
+                  </li>
+                  <li>
+                    <div class="bullet-icon"><i class="fa-solid fa-check-double"></i></div>
+                    <div class="bullet-text">
+                      Developed disciplined troubleshooting acuity, precision engineering practices, and systematic hardware failure diagnostics.
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="exp-tech-pills">
+                  <span class="pill">Industrial Electronics</span>
+                  <span class="pill">System Diagnostics</span>
+                  <span class="pill">Quality Verification</span>
+                  <span class="pill">Power Systems</span>
+                  <span class="pill">Hardware Testing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06. Education Section -->
+    <section class="section education-section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">06. ACADEMICS</span>
+          <h2 class="section-title">Education &amp; <span class="text-cyan">Qualifications</span></h2>
+          <p class="section-subtitle">Academic degrees, engineering coursework, and technical foundations</p>
+        </div>
+
+        <div class="education-grid">
+          <!-- 1. VBIT -->
+          <div class="edu-card featured-edu">
+            <div class="edu-top">
+              <span class="edu-badge"><i class="fa-solid fa-graduation-cap"></i> Undergraduate Degree</span>
+              <span class="edu-period">2022 – 2025</span>
+            </div>
+            <h3 class="edu-degree">B.Tech in Artificial Intelligence &amp; Machine Learning</h3>
+            <h4 class="edu-institution">VBIT (Vignana Bharathi Institute of Technology)</h4>
+            <p class="edu-loc"><i class="fa-solid fa-location-dot"></i> Hyderabad, Telangana</p>
+            <p class="edu-desc">
+              Specialized technical degree focusing on AI/ML algorithms, neural networks, data structures, web application architecture, and software design principles.
+            </p>
+            <ul class="edu-list">
+              <li><i class="fa-solid fa-check"></i> Advanced machine learning &amp; computational models</li>
+              <li><i class="fa-solid fa-check"></i> Built multiple full-stack and web engineering platforms</li>
+              <li><i class="fa-solid fa-check"></i> Active participant in engineering hackathons &amp; tech expos</li>
+            </ul>
+          </div>
+
+          <!-- 2. GIOE -->
+          <div class="edu-card">
+            <div class="edu-top">
+              <span class="edu-badge"><i class="fa-solid fa-certificate"></i> Technical Diploma</span>
+              <span class="edu-period">2018 – 2022</span>
+            </div>
+            <h3 class="edu-degree">Diploma in Industrial Electronics</h3>
+            <h4 class="edu-institution">GIOE (Government Institute Of Electronics)</h4>
+            <p class="edu-loc"><i class="fa-solid fa-location-dot"></i> Hyderabad, Telangana</p>
+            <p class="edu-desc">
+              Comprehensive 4-year diploma program in digital logic, microcontrollers, embedded systems, and industrial instrumentation.
+            </p>
+            <ul class="edu-list">
+              <li><i class="fa-solid fa-check"></i> Strong mastery in circuit design &amp; microcontroller interfacing</li>
+              <li><i class="fa-solid fa-check"></i> Hands-on lab experience with sensors and automation</li>
+              <li><i class="fa-solid fa-check"></i> Qualified for 6 months industrial training at HBL Power Systems</li>
+            </ul>
+          </div>
+
+          <!-- 3. Geetha High School -->
+          <div class="edu-card">
+            <div class="edu-top">
+              <span class="edu-badge"><i class="fa-solid fa-school"></i> Secondary Education</span>
+              <span class="edu-period">Completed</span>
+            </div>
+            <h3 class="edu-degree">Secondary School Certificate (SSC)</h3>
+            <h4 class="edu-institution">Geetha High School</h4>
+            <p class="edu-loc"><i class="fa-solid fa-location-dot"></i> Hyderabad, Telangana</p>
+            <p class="edu-desc">
+              Solid academic foundation with distinction in science, mathematics, computer basics, and problem-solving.
+            </p>
+            <ul class="edu-list">
+              <li><i class="fa-solid fa-check"></i> Excellence in mathematics, physics, and computer fundamentals</li>
+              <li><i class="fa-solid fa-check"></i> Active participant in school science exhibitions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07. Certifications Section -->
+    <section class="section certs-section" id="certifications">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">07. CREDENTIALS</span>
+          <h2 class="section-title">Certifications &amp; <span class="text-cyan">Badges</span></h2>
+          <p class="section-subtitle">Verified professional credentials, workshops, and technical competencies</p>
+        </div>
+
+        <div class="certs-grid">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fa-solid fa-globe"></i></div>
+            <span class="cert-status"><i class="fa-solid fa-circle-check"></i> Verified</span>
+            <h3 class="cert-title">Build Your Own Static Website</h3>
+            <p class="cert-issuer">Professional Web Academy</p>
+            <div class="cert-skills">
+              <span>HTML5</span><span>CSS3</span><span>Semantic Layouts</span><span>Web Standards</span>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fa-brands fa-python"></i></div>
+            <span class="cert-status"><i class="fa-solid fa-circle-check"></i> Verified</span>
+            <h3 class="cert-title">Programming Foundations with Python</h3>
+            <p class="cert-issuer">Python Software &amp; Computing Program</p>
+            <div class="cert-skills">
+              <span>Python 3</span><span>Data Structures</span><span>OOP</span><span>Algorithms</span>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+            <span class="cert-status"><i class="fa-solid fa-circle-check"></i> Verified</span>
+            <h3 class="cert-title">Build Your Own Responsive Website</h3>
+            <p class="cert-issuer">Modern Frontend Certification</p>
+            <div class="cert-skills">
+              <span>CSS Grid</span><span>Flexbox</span><span>Mobile-First UX</span><span>Tailwind</span>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fa-solid fa-chart-pie"></i></div>
+            <span class="cert-status"><i class="fa-solid fa-circle-check"></i> Specialized</span>
+            <h3 class="cert-title">Data Analytics Mega Workshop</h3>
+            <p class="cert-issuer">Data Science &amp; AIML Initiative</p>
+            <div class="cert-skills">
+              <span>EDA</span><span>Python Visuals</span><span>Statistical Analytics</span><span>Modeling</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08. Contact Section -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">08. GET IN TOUCH</span>
+          <h2 class="section-title">Let's <span class="text-cyan">Connect</span></h2>
+          <p class="section-subtitle">Interested in collaborating, hiring, or discussing engineering opportunities? Reach out directly!</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info-panel">
+            <h3 class="contact-subheading">Contact Information</h3>
+            <p class="contact-desc">
+              I'm always open to discussing new software projects, government technology innovations, full-stack opportunities, or engineering internships.
+            </p>
+
+            <div class="contact-links-list">
+              <a href="mailto:vinaykambley@gmail.com" class="contact-link-item">
+                <div class="c-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <span class="c-label">Email</span>
+                  <span class="c-val">vinaykambley@gmail.com</span>
+                </div>
+              </a>
+
+              <a href="https://linkedin.com/in/kambley-vinay-3a1224253/" target="_blank" rel="noopener noreferrer" class="contact-link-item">
+                <div class="c-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                <div>
+                  <span class="c-label">LinkedIn</span>
+                  <span class="c-val">kambley-vinay-3a1224253</span>
+                </div>
+              </a>
+
+              <a href="https://github.com/vinaykambley7" target="_blank" rel="noopener noreferrer" class="contact-link-item">
+                <div class="c-icon"><i class="fa-brands fa-github"></i></div>
+                <div>
+                  <span class="c-label">GitHub</span>
+                  <span class="c-val">github.com/vinaykambley7</span>
+                </div>
+              </a>
+
+              <div class="contact-link-item">
+                <div class="c-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <span class="c-label">Location</span>
+                  <span class="c-val">Hyderabad, Telangana, India</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-availability">
+              <span class="pulse-ring"></span>
+              <span class="pulse-core"></span>
+              <span>Open to Full-Time Positions, High-Impact Roles &amp; Internships</span>
+            </div>
+          </div>
+
+          <div class="contact-form-panel">
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Project inquiry or job opportunity" required />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Hi Vinay, I'd like to discuss..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+
+              <div class="form-status" id="form-status"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Project Architecture Modal -->
+  <div class="modal-backdrop" id="project-modal" aria-hidden="true" role="dialog">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close" aria-label="Close dialog">&times;</button>
+      <div class="modal-header">
+        <span class="modal-badge" id="modal-badge">Architecture Overview</span>
+        <h3 class="modal-title" id="modal-title">Project Title</h3>
+        <p class="modal-subtitle" id="modal-subtitle">Project Subtitle</p>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc" id="modal-desc"></p>
+        <div class="modal-features-block">
+          <h4>Key Engineering Features</h4>
+          <ul class="modal-features-list" id="modal-features"></ul>
+        </div>
+        <div class="modal-tech-block">
+          <h4>Technologies Used</h4>
+          <div class="modal-tech-tags" id="modal-tech"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="modal-live-link">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Live App
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="modal-github-link">
+          <i class="fa-brands fa-github"></i> GitHub Repository
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <div class="brand-badge">VK</div>
+        <div>
+          <p class="footer-copy">&copy; 2026 Vinay Kambley. All rights reserved.</p>
+          <p class="footer-role">Aadhaar Trainer &amp; Portal Developer &bull; Web &amp; AIML Engineer</p>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://linkedin.com/in/kambley-vinay-3a1224253/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/vinaykambley7" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="mailto:vinaykambley@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Floating Button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- Main JavaScript File -->
+  <script src="./index.js"></script>
+</body>
 </html>
